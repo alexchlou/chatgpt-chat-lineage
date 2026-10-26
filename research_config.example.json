@@ -1,0 +1,14 @@
+{
+  "enabled": false,
+  "dataset_root": null,
+  "timezone": "UTC",
+  "preferred_browser_profile": null,
+  "language": "en",
+  "knowledge_graph": {"enabled": false},
+  "email_archive": {
+    "enabled": false,
+    "recipient": null,
+    "account_email": null,
+    "state_root": null
+  }
+}

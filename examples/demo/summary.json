@@ -1,0 +1,21 @@
+{
+  "source_type": "synthetic",
+  "real_chats_read": 0,
+  "real_saves": 0,
+  "emails_sent": 0,
+  "conversations": 8,
+  "retained_blocked_events": 1,
+  "corrections": 1,
+  "relation_counts": {
+    "E0": 4,
+    "E1": 2,
+    "H": 3
+  },
+  "update_id": "2cde885d1333fe2d1124e25408eed532e33dd3b34f86dc711d66e332f633a100",
+  "obsidian_notes": 33,
+  "idempotency": {
+    "event_retry": "PASS",
+    "graph_export": "PASS",
+    "obsidian_sync": "PASS"
+  }
+}

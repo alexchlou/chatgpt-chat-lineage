@@ -1,0 +1,65 @@
+[
+  {
+    "id": "inspect",
+    "query": "Inspect this ChatGPT title in Chrome without editing.",
+    "expected": "chatgpt-conversation-rename",
+    "mode": "inspect",
+    "critical": true
+  },
+  {
+    "id": "rename",
+    "query": "Rename the current ChatGPT conversation in Chrome.",
+    "expected": "chatgpt-conversation-rename",
+    "mode": "apply",
+    "critical": true
+  },
+  {
+    "id": "retitle",
+    "query": "Retitle this ChatGPT thread from its dominant project and task.",
+    "expected": "chatgpt-conversation-rename",
+    "mode": "apply",
+    "critical": true
+  },
+  {
+    "id": "batch",
+    "query": "Rename the first ten recent ChatGPT conversations, excluding pinned chats.",
+    "expected": "chatgpt-conversation-rename",
+    "mode": "apply",
+    "critical": true
+  },
+  {
+    "id": "preview",
+    "query": "Preview better titles for the first ten recent ChatGPT chats.",
+    "expected": "chatgpt-conversation-rename",
+    "mode": "inspect",
+    "critical": true
+  },
+  {
+    "id": "explicit",
+    "query": "$chatgpt-conversation-rename",
+    "expected": "chatgpt-conversation-rename",
+    "mode": "inspect",
+    "critical": true
+  },
+  {
+    "id": "negative-codex",
+    "query": "Rename the current Codex task.",
+    "expected": null,
+    "mode": null,
+    "critical": true
+  },
+  {
+    "id": "negative-archive",
+    "query": "Archive a ChatGPT Deep Research report.",
+    "expected": null,
+    "mode": null,
+    "critical": true
+  },
+  {
+    "id": "negative-format",
+    "query": "Format this DOCX document.",
+    "expected": null,
+    "mode": null,
+    "critical": true
+  }
+]

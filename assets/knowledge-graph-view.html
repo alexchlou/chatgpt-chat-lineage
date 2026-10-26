@@ -1,0 +1,292 @@
+<section id="rename-research-network" aria-label="Research relationship report">
+<style>
+#rename-research-network{--kg-bg:#f5f7f8;--kg-panel:#fff;--kg-ink:#1d3039;--kg-muted:#62747c;--kg-border:#dbe3e6;--kg-soft:#edf2f3;--kg-e0:#267a70;--kg-e1:#3970a8;--kg-h:#a56c35;--kg-ring:#c5dbd6;color:var(--kg-ink);font:14px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;max-width:1280px;margin:auto;padding:28px 24px 40px;box-sizing:border-box}
+#rename-research-network *,#rename-research-network *::before,#rename-research-network *::after{box-sizing:border-box}
+#rename-research-network [hidden]{display:none!important}
+#rename-research-network h1,#rename-research-network h2,#rename-research-network h3,#rename-research-network p{margin:0}
+#rename-research-network h1{font-size:30px;line-height:1.3;letter-spacing:-.7px;font-weight:650}
+#rename-research-network h2{font-size:17px;font-weight:600}
+#rename-research-network h3{font-size:15px;font-weight:600}
+#rename-research-network .kg-muted{color:var(--kg-muted)}
+#rename-research-network .kg-small{font-size:12px}
+#rename-research-network .kg-eyebrow{font-size:11px;letter-spacing:2px;font-weight:600;color:var(--kg-e0);margin-bottom:8px}
+#rename-research-network .kg-header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:24px}
+#rename-research-network .kg-header p{margin-top:10px;max-width:660px;color:var(--kg-muted)}
+#rename-research-network .kg-stamp{text-align:right;white-space:normal;max-width:360px;overflow-wrap:anywhere;font-size:12px;color:var(--kg-muted);padding-top:8px}
+#rename-research-network .kg-stamp strong{display:block;font-size:14px;color:var(--kg-ink);font-weight:500}
+#rename-research-network .kg-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px}
+#rename-research-network .kg-stat{background:var(--kg-panel);border:1px solid var(--kg-border);border-radius:12px;padding:16px 18px}
+#rename-research-network .kg-stat-value{font-size:29px;line-height:1.25;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.6px;margin:5px 0}
+#rename-research-network .kg-toolbar{display:grid;grid-template-columns:1fr 1fr 1.6fr;gap:14px;margin-bottom:20px}
+#rename-research-network label.kg-field{display:flex;flex-direction:column;gap:6px;min-width:0;font-size:12px;color:var(--kg-muted)}
+#rename-research-network select,#rename-research-network input[type=search]{font:inherit;color:var(--kg-ink);background:var(--kg-panel);border:1px solid var(--kg-border);border-radius:8px;padding:9px 11px;max-width:100%;min-width:0;width:100%;font-size:13px;height:40px}
+#rename-research-network input[type=checkbox]{accent-color:var(--kg-e0);width:15px;height:15px;margin:0}
+#rename-research-network button{font:inherit;color:var(--kg-ink);background:var(--kg-panel);border:1px solid var(--kg-border);border-radius:7px;padding:6px 11px;font-size:12px;cursor:pointer}
+#rename-research-network button:hover{background:var(--kg-soft)}
+#rename-research-network button:disabled{opacity:.45;cursor:default}
+#rename-research-network button[aria-pressed=true]{background:var(--kg-ink);color:var(--kg-panel)}
+#rename-research-network :focus-visible{outline:3px solid var(--kg-e1);outline-offset:3px}
+#rename-research-network .kg-workspace{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:18px;align-items:start}
+#rename-research-network .kg-canvas-panel,#rename-research-network .kg-inspector,#rename-research-network .kg-run-panel{background:var(--kg-panel);border:1px solid var(--kg-border);border-radius:14px;min-width:0;overflow:hidden}
+#rename-research-network .kg-panel-heading{padding:18px 18px 12px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+#rename-research-network .kg-layers{display:flex;gap:7px 14px;flex-wrap:wrap;padding:0 18px 12px}
+#rename-research-network .kg-check{display:inline-flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;min-height:25px}
+#rename-research-network .kg-tier{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;font-size:11px;font-weight:600;border-radius:4px;background:var(--kg-soft);padding:2px 6px}
+#rename-research-network .kg-tier::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--kg-e0)}
+#rename-research-network .kg-tier-e1::before{background:var(--kg-e1)}
+#rename-research-network .kg-tier-h::before{background:var(--kg-h);border-radius:0}
+#rename-research-network .kg-graph-meta{padding:0 18px 10px;color:var(--kg-muted);font-size:12px}
+#rename-research-network .kg-camera{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+#rename-research-network .kg-svg{display:block;width:100%;touch-action:none;background:radial-gradient(circle,var(--kg-border) .6px,transparent .8px) 12px 12px/19px 19px}
+#rename-research-network .kg-svg text{font-family:inherit;fill:var(--kg-ink);font-size:12px}
+#rename-research-network .kg-svg .kg-node-code{font-size:11px;fill:var(--kg-muted)}
+#rename-research-network .kg-line{fill:none;stroke-width:1.7;vector-effect:non-scaling-stroke;transition:opacity .15s}
+#rename-research-network .kg-e0{stroke:var(--kg-e0)}
+#rename-research-network .kg-e1{stroke:var(--kg-e1)}
+#rename-research-network .kg-h{stroke:var(--kg-h);stroke-dasharray:6 5}
+#rename-research-network .kg-hit{fill:none;stroke:transparent;stroke-width:16;cursor:pointer}
+#rename-research-network .kg-node-shape{fill:var(--kg-panel);stroke:var(--kg-border);stroke-width:1.2;vector-effect:non-scaling-stroke}
+#rename-research-network .kg-domain{fill:var(--kg-soft);stroke:var(--kg-e1)}
+#rename-research-network .kg-selected .kg-node-shape{stroke:var(--kg-e0);stroke-width:2.3}
+#rename-research-network .kg-neighbor .kg-node-shape{stroke:var(--kg-ring)}
+#rename-research-network .kg-edge-selected{stroke-width:3.3}
+#rename-research-network .kg-dim{opacity:.18}
+#rename-research-network .kg-node{cursor:grab}
+#rename-research-network .kg-canvas-footer{border-top:1px solid var(--kg-border);padding:11px 18px;font-size:11px;color:var(--kg-muted);display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+#rename-research-network .kg-inspector-head{padding:17px 18px;border-bottom:1px solid var(--kg-border)}
+#rename-research-network .kg-selects{display:grid;gap:10px;padding:14px 18px;border-bottom:1px solid var(--kg-border)}
+#rename-research-network .kg-detail{padding:18px;overflow-wrap:anywhere}
+#rename-research-network .kg-detail h3{font-size:17px;line-height:1.5;margin:10px 0}
+#rename-research-network .kg-detail p{margin:9px 0}
+#rename-research-network .kg-detail .kg-section-label{font-size:11px;font-weight:600;color:var(--kg-muted);letter-spacing:.7px;margin-top:18px}
+#rename-research-network .kg-evidence-boundary{padding-top:13px;border-top:1px solid var(--kg-border);font-size:12px;color:var(--kg-muted)}
+#rename-research-network .kg-endpoints{display:grid;gap:8px;margin:14px 0}
+#rename-research-network .kg-endpoints a,#rename-research-network a{color:var(--kg-e1);text-decoration:none}
+#rename-research-network a:hover{text-decoration:underline}
+#rename-research-network .kg-source-record{padding:12px 0;border-top:1px solid var(--kg-border);font-size:12px}
+#rename-research-network .kg-source-record p{margin:4px 0}
+#rename-research-network .kg-reference{font:11px/1.7 ui-monospace,SFMono-Regular,monospace;overflow-wrap:anywhere;color:var(--kg-muted)}
+#rename-research-network details>summary{cursor:pointer;font-size:12px;padding:10px 0;color:var(--kg-muted)}
+#rename-research-network .kg-detail details{border-top:1px solid var(--kg-border);margin-top:12px}
+#rename-research-network .kg-relation-row{display:flex;justify-content:space-between;align-items:start;gap:10px;border-bottom:1px solid var(--kg-border);padding:12px 0;font-size:12px}
+#rename-research-network .kg-empty-guide{padding:12px 0 18px;color:var(--kg-muted)}
+#rename-research-network .kg-history{padding:0 18px 18px}
+#rename-research-network .kg-table-wrap{overflow-x:auto;max-width:100%}
+#rename-research-network table{border-collapse:collapse;width:100%;font-size:12px;text-align:left;table-layout:fixed}
+#rename-research-network th{color:var(--kg-muted);font-weight:500;background:var(--kg-soft)}
+#rename-research-network td,#rename-research-network th{padding:10px 9px;border-bottom:1px solid var(--kg-border);vertical-align:top;overflow-wrap:anywhere}
+#rename-research-network .kg-run-panel{margin-top:20px;padding:0 20px 10px}
+#rename-research-network .kg-run-panel>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:17px 0;color:var(--kg-ink);font-size:15px;font-weight:600;list-style:none}
+#rename-research-network .kg-run-panel>summary::after{content:"＋";font-size:18px;font-weight:400}
+#rename-research-network .kg-run-panel[open]>summary::after{content:"－"}
+#rename-research-network .kg-run-top{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:0 0 14px}
+#rename-research-network .kg-run-top label{flex:1;max-width:520px}
+#rename-research-network .kg-run-metrics{display:flex;gap:8px 18px;flex-wrap:wrap;font-size:12px;padding:14px 0}
+#rename-research-network .kg-run-metrics strong{font-weight:600;font-size:16px;font-variant-numeric:tabular-nums}
+#rename-research-network .kg-run-panel th:first-child{width:7%}
+#rename-research-network .kg-run-panel th:nth-child(2){width:17%}
+#rename-research-network .kg-run-panel th:nth-child(n+3){width:38%}
+#rename-research-network .kg-status{font-size:11px;font-weight:600;white-space:normal}
+#rename-research-network .kg-foot{margin-top:18px;font-size:11px;color:var(--kg-muted);display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+#rename-research-network .kg-stale{border-top:1px solid var(--kg-border);margin-top:18px}
+@media(prefers-color-scheme:dark){#rename-research-network{--kg-bg:#141d22;--kg-panel:#1c292f;--kg-ink:#e1eaec;--kg-muted:#9db0b8;--kg-border:#35454c;--kg-soft:#26363d;--kg-e0:#6bc6b2;--kg-e1:#82b4e4;--kg-h:#d4aa78;--kg-ring:#437a6d}}
+@media(max-width:1000px){#rename-research-network .kg-workspace{grid-template-columns:minmax(0,1fr)}#rename-research-network .kg-inspector{display:grid;grid-template-columns:250px minmax(0,1fr)}#rename-research-network .kg-inspector-head{grid-column:1/-1}#rename-research-network .kg-selects{border-bottom:0;border-right:1px solid var(--kg-border)}}
+@media(max-width:600px){#rename-research-network{padding:20px 12px 28px}#rename-research-network h1{font-size:25px}#rename-research-network .kg-header{display:block}#rename-research-network .kg-stamp{text-align:left;padding-top:14px}#rename-research-network .kg-stamp strong{display:inline;margin-right:8px}#rename-research-network .kg-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#rename-research-network .kg-stat{padding:12px 14px}#rename-research-network .kg-stat-value{font-size:25px}#rename-research-network .kg-toolbar{grid-template-columns:1fr 1fr;gap:10px}#rename-research-network .kg-search{grid-column:1/-1}#rename-research-network .kg-inspector{display:block}#rename-research-network .kg-selects{border-right:0;border-bottom:1px solid var(--kg-border)}#rename-research-network .kg-panel-heading{align-items:start;flex-wrap:wrap}#rename-research-network .kg-run-top{display:block}#rename-research-network .kg-run-panel{padding-inline:12px}#rename-research-network .kg-run-panel table{min-width:600px}#rename-research-network .kg-foot{display:block}#rename-research-network select,#rename-research-network input[type=search]{font-size:16px;height:44px}}
+@media(prefers-reduced-motion:reduce){#rename-research-network *{transition:none!important}}
+@media print{#rename-research-network{max-width:none;padding:0;--kg-bg:#fff;--kg-panel:#fff;--kg-ink:#111;--kg-muted:#444;--kg-border:#ccc;--kg-soft:#f2f2f2}#rename-research-network .kg-toolbar,#rename-research-network .kg-camera,#rename-research-network .kg-selects,#rename-research-network .kg-layers,#rename-research-network button{display:none!important}#rename-research-network .kg-workspace{display:block}#rename-research-network .kg-inspector{margin-top:15px;display:block}#rename-research-network .kg-svg{max-height:650px}#rename-research-network .kg-run-panel{break-before:page}#rename-research-network .kg-stat{break-inside:avoid}}
+</style>
+<header class="kg-header">
+ <div><div class="kg-eyebrow">RESEARCH ATLAS / LOCAL RESEARCH ARCHIVE</div><h1>Chat Lineage</h1><p>Explore connections between conversations. Trace every relationship to its source.</p></div>
+ <div class="kg-stamp"><strong data-kg-date></strong><span>Archived snapshot, not live browser state</span></div>
+</header>
+<div class="kg-stats" aria-label="Overview">
+ <div class="kg-stat"><div class="kg-muted kg-small">Conversations</div><div class="kg-stat-value" data-kg-stat-conversations></div><div class="kg-muted kg-small" data-kg-stat-runs></div></div>
+ <div class="kg-stat"><div class="kg-muted kg-small">Terminal observations</div><div class="kg-stat-value" data-kg-stat-observations></div><div class="kg-muted kg-small">Excludes plans and pending placeholders</div></div>
+ <div class="kg-stat"><div class="kg-muted kg-small">Sourced cross-topic relations</div><div class="kg-stat-value" data-kg-stat-relations></div><div class="kg-muted kg-small" data-kg-stat-supported></div></div>
+ <div class="kg-stat"><div class="kg-muted kg-small">Pending hypotheses H</div><div class="kg-stat-value" data-kg-stat-hypotheses></div><div class="kg-muted kg-small">New observations never promote evidence</div></div>
+</div>
+<div class="kg-toolbar">
+ <label class="kg-field">View<select data-kg-mode><option value="network">Cross-topic relations</option><option value="domains">Domain coding</option><option value="history">Title history</option></select></label>
+ <label class="kg-field">Source type<select data-kg-source><option value="all">All sources</option><option value="live_ui">Live UI observation</option><option value="historical">Historical import</option><option value="synthetic">Synthetic fixture</option></select></label>
+ <label class="kg-field kg-search">Search conversations or topics<input type="search" data-kg-search placeholder="Title, topic, or node identifier" autocomplete="off"></label>
+</div>
+<div class="kg-workspace">
+ <main class="kg-canvas-panel">
+  <div class="kg-panel-heading"><h2 data-kg-view-title>Cross-topic relations</h2><div class="kg-camera" data-kg-camera><button type="button" data-kg-zoom-in aria-label="Zoom in">＋</button><button type="button" data-kg-zoom-out aria-label="Zoom out">−</button><button type="button" data-kg-fit>Fit</button><button type="button" data-kg-focus aria-pressed="false" disabled>One-hop focus</button></div></div>
+  <div class="kg-layers" data-kg-layers>
+   <label class="kg-check"><input type="checkbox" value="E0" checked><span class="kg-tier">E0</span><span>Tag overlap <span data-kg-tier-count="E0"></span></span></label>
+   <label class="kg-check"><input type="checkbox" value="E1" checked><span class="kg-tier kg-tier-e1">E1</span><span><span data-kg-e1-caption>Topic compatibility</span> <span data-kg-tier-count="E1"></span></span></label>
+   <label class="kg-check"><input type="checkbox" value="H" checked><span class="kg-tier kg-tier-h">H</span><span>Pending validation <span data-kg-tier-count="H"></span></span></label>
+   <label class="kg-check"><input type="checkbox" data-kg-isolates><span>Show isolates</span></label>
+  </div>
+  <div class="kg-graph-meta" data-kg-count aria-live="polite"></div>
+  <svg class="kg-svg" role="img" aria-label="Relationship network. Solid lines indicate metadata links; dashed lines indicate hypotheses. Use the selectors to inspect sources." data-kg-diagram></svg>
+  <div class="kg-history kg-table-wrap" data-kg-history></div>
+  <div class="kg-canvas-footer"><span>Solid: E0 / E1. Dashed: H. Position and distance do not measure evidence.</span><button type="button" data-kg-export>Export visible relations CSV</button></div>
+ </main>
+ <aside class="kg-inspector" aria-label="Node and relation evidence">
+  <div class="kg-inspector-head"><h2>Sources and evidence</h2><p class="kg-muted kg-small">Inspect source records, coding basis, and validation needs</p></div>
+  <div class="kg-selects"><label class="kg-field">Conversation / node<select data-kg-node><option value="">Select a node</option></select></label><label class="kg-field" data-kg-edge-label>Relation<select data-kg-edge><option value="">Select a relation</option></select></label></div>
+  <div class="kg-detail" data-kg-detail aria-live="polite"></div>
+ </aside>
+</div>
+<details class="kg-run-panel" data-kg-runs>
+ <summary><span>Daily runs and data quality <span class="kg-muted kg-small" data-kg-run-summary></span></span></summary>
+ <div class="kg-run-top"><label class="kg-field">Run<select data-kg-run></select></label><div class="kg-muted kg-small" data-kg-run-source></div></div>
+ <div class="kg-run-metrics" data-kg-run-metrics></div>
+ <div class="kg-table-wrap" data-kg-run-table></div>
+ <p class="kg-muted kg-small" data-kg-run-note></p>
+</details>
+<details class="kg-stale" data-kg-stale><summary>Changed sources and quarantined relations</summary><div data-kg-stale-list></div></details>
+<footer class="kg-foot"><span data-kg-summary></span><span>Recent chats are a convenience sample. Degree is not research priority. E0 / E1 do not establish common arguments or causality; H remains pending validation.</span></footer>
+<script type="application/json" data-kg-data>__KG_DATA__</script>
+<script>
+(()=>{
+'use strict';
+const root=document.getElementById('rename-research-network');
+const data=JSON.parse(root.querySelector('[data-kg-data]').textContent),research=data.research;
+const q=s=>root.querySelector(s),svg=q('[data-kg-diagram]'),ns='http://www.w3.org/2000/svg';
+const nodeMap=new Map(research.nodes.map(n=>[n.id,n]));
+const names={live_ui:'Live UI observation',historical_artifact:'Historical artifact',historical_transcript:'Historical transcript',synthetic:'Synthetic fixture'};
+const statuses={'RENAMED':'Renamed','ALREADY CORRECT':'Kept title','BLOCKED':'Blocked','VERIFICATION FAILED':'Verification failed','INSPECTED':'Inspected','PENDING':'Pending'};
+let state={version:3,mode:'network',source:'all',tiers:['E0','E1','H'],isolates:false,node:null,edge:null,query:'',focus:false};
+let visibleNodes=[],visibleEdges=[],positions=new Map(),scene=null,edgeMarks=[],nodeMarks=[],width=736,height=560,nodeWidth=126;
+let camera={x:0,y:0,scale:1},lastComponents=[];
+function restore(value){const s=value?.privateContent||value;if(![2,3].includes(s?.version))return;state={version:3,mode:['network','domains','history'].includes(s.mode)?s.mode:'network',source:['all','live_ui','historical','synthetic'].includes(s.source)?s.source:'all',tiers:Array.isArray(s.tiers)?s.tiers.filter(t=>['E0','E1','H'].includes(t)):['E0','E1','H'],isolates:s.isolates===true,node:nodeMap.has(s.node)?s.node:null,edge:typeof s.edge==='string'?s.edge:null,query:typeof s.query==='string'?s.query.slice(0,120):'',focus:s.focus===true};}
+restore(window.openai?.widgetState);
+if(!window.openai){try{restore(JSON.parse(localStorage.getItem('rename-network-view-v3')||'null'));}catch(_){}}
+function remember(){if(window.openai?.setWidgetState){const p=window.openai.setWidgetState({modelContent:{view:state.mode,evidence_levels:state.tiers,source:state.source,selected_conversation:nodeMap.get(state.node)?.properties.url||null,selected_relation:state.edge},privateContent:{...state}});p?.catch?.(()=>{});}else{try{localStorage.setItem('rename-network-view-v3',JSON.stringify(state));}catch(_){}}}
+function el(parent,tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;parent.appendChild(e);return e;}
+function mark(parent,tag,attrs,text){const e=document.createElementNS(ns,tag);for(const[k,v]of Object.entries(attrs||{}))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;parent.appendChild(e);return e;}
+function code(n){return n.coding?.code||n.properties?.id||'C-'+n.id.slice(-5);}
+function short(n){return n.coding?.short_label||n.label.split(/\s*[|｜]\s*/).at(-1);}
+function label(n){return code(n)+' · '+short(n);}
+function clipped(value,count){const chars=Array.from(value);return chars.length>count?chars.slice(0,count-1).join('')+'…':value;}
+function sourceMatch(s){return state.source==='all'||(state.source==='historical'?s.source_type?.startsWith('historical'):s.source_type===state.source);}
+function observations(n){return data.observations.filter(o=>o.conversation_url===n.properties.url&&sourceMatch(o));}
+function edgeMatch(e){const p=e.properties;if(!p.active||!state.tiers.includes(p.tier))return false;return[e.source,e.target].every(id=>nodeMap.get(id)?.type==='ResearchDomain'||p.support.some(s=>s.conversation_url===nodeMap.get(id)?.properties.url&&sourceMatch(s)));}
+function options(select,rows,value,placeholder){select.replaceChildren();if(placeholder!==null){const b=el(select,'option',placeholder);b.value='';}rows.forEach(([key,text])=>{const o=el(select,'option',text);o.value=key;});select.value=value||'';}
+function table(parent,head,rows){parent.replaceChildren();const t=el(parent,'table');const tr=el(el(t,'thead'),'tr');head.forEach(h=>el(tr,'th',h));const body=el(t,'tbody');rows.forEach(row=>{const r=el(body,'tr');row.forEach(v=>el(r,'td',String(v??'Unknown')));});return t;}
+function link(parent,url,text){if(/\/c\/synthetic-/.test(url||'')){return el(parent,'span','Synthetic identifier: no live chat');}if(!/^https:\/\/chatgpt\.com\/(?:g\/[^/]+\/)?c\/[\w-]+$/.test(url||''))return;const a=el(parent,'a',text);a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;}
+function tier(parent,value){return el(parent,'span',value+' · '+research.tiers[value],'kg-tier kg-tier-'+value.toLowerCase());}
+function localTime(value){if(!value)return'Unknown';try{return new Intl.DateTimeFormat('en-GB',{timeZone:'UTC',dateStyle:'short',timeStyle:'short',hour12:false}).format(new Date(value));}catch(_){return'Unknown';}}
+function components(nodes,edges){const adj=new Map(nodes.map(n=>[n.id,new Set()]));edges.forEach(e=>{adj.get(e.source)?.add(e.target);adj.get(e.target)?.add(e.source);});const seen=new Set(),groups=[];for(const n of nodes){if(seen.has(n.id))continue;const stack=[n.id],g=[];while(stack.length){const id=stack.pop();if(seen.has(id))continue;seen.add(id);g.push(id);for(const x of adj.get(id)||[])if(!seen.has(x))stack.push(x);}groups.push(g);}return groups.sort((a,b)=>b.length-a.length||a[0].localeCompare(b[0]));}
+function showDetail(){
+ const area=q('[data-kg-detail]');area.replaceChildren();
+ const edge=visibleEdges.find(e=>e.id===state.edge);
+ if(edge){const p=edge.properties;tier(area,p.tier);el(area,'h3',p.label);el(area,'p',(p.layer==='domain_coding'?'Analyst domain coding':p.tier==='H'?'Pending hypothesis':p.tier==='E0'?'Exact recorded tag':'Metadata compatibility')+' · '+p.validation_status,'kg-muted kg-small');
+  const endpoints=el(area,'div',undefined,'kg-endpoints');[edge.source,edge.target].forEach(id=>{const n=nodeMap.get(id);if(n.type==='Conversation')link(endpoints,n.properties.url,label(n)+' ↗');else el(endpoints,'span',label(n));});
+  el(area,'p','Evidence basis','kg-section-label');el(area,'p',p.evidence);el(area,'p','Further validation needed','kg-section-label');el(area,'p',p.validation_needed);
+  const detail=el(area,'details');el(detail,'summary',`Source records: ${p.support.length}`);
+  p.support.forEach(s=>{const box=el(detail,'div',undefined,'kg-source-record');el(box,'strong',names[s.source_type]||s.source_type);el(box,'p',s.displayed_title||'Title unknown at observation');el(box,'p',`Observed: ${s.event_date} at ${localTime(s.observed_at)} UTC`,'kg-muted');el(box,'p',`Coding basis: ${s.annotation_basis||'Unknown'}`,'kg-muted');el(box,'p',s.observation_id,'kg-reference');el(box,'p',s.result_event_id,'kg-reference');});
+  const refs=el(area,'details');el(refs,'summary','Registered sources and fingerprints');el(refs,'p',`Validation status: ${p.validation_status}`,'kg-reference');
+  if(!p.source_documents.length)el(refs,'p','Computed deterministically from identical recorded tags.','kg-small');
+  p.source_documents.forEach(d=>el(refs,'p',`${d.path}\nSHA256 ${d.sha256}`,'kg-reference'));
+  p.support.forEach(s=>el(refs,'p',`${s.run_id} · ${s.source_ref||'Unknown source'}\nSHA256 ${s.signature}`,'kg-reference'));
+ }else if(state.node&&nodeMap.has(state.node)){
+  const n=nodeMap.get(state.node);el(area,'span',n.type==='ResearchDomain'?'Domain: analyst coding':'Conversation record','kg-tier');el(area,'h3',label(n));
+  if(n.type==='ResearchDomain'){el(area,'p',n.properties.question);el(area,'p',n.properties.basis);el(area,'p','Domain coding does not establish theoretical coherence, research priority, or a paper project.','kg-evidence-boundary');}
+  else{link(area,n.properties.url,'Open original conversation');const titles=n.properties.latest_observed_titles||[];el(area,'p',titles.length>1?'Multiple titles were observed on the same date; order is undetermined.':'Latest observed titles','kg-section-label');titles.forEach(t=>el(area,'p',t));const obs=observations(n);el(area,'p',`${obs.length} filtered observations; ${visibleEdges.filter(e=>e.source===n.id||e.target===n.id).length} visible relations`,'kg-muted kg-small');el(area,'p','Node degree measures recorded metadata connections, not research priority.','kg-evidence-boundary');}
+  const links=visibleEdges.filter(e=>e.source===n.id||e.target===n.id);if(links.length){el(area,'p','Related connections','kg-section-label');links.forEach(e=>{const row=el(area,'div',undefined,'kg-relation-row');el(row,'span',e.properties.label);const b=el(row,'button',e.properties.tier);b.type='button';b.addEventListener('click',()=>chooseEdge(e.id));});}
+ }else{
+  el(area,'div','Select a connection to inspect why it exists.','kg-empty-guide');
+  for(const [t,text]of [['E0','Both conversations record exactly the same topic tag.'],['E1','Recorded metadata supports topic compatibility or explicit overlap.'],['H','A candidate theoretical, comparative, or applied connection requiring further evidence.']]){const row=el(area,'div',undefined,'kg-source-record');tier(row,t);el(row,'p',text);}
+  el(area,'p','A solid line does not validate an argument. Disconnected components and isolates reflect the limits of the data.','kg-evidence-boundary');
+ }
+ q('[data-kg-node]').value=state.node||'';q('[data-kg-edge]').value=state.edge||'';
+ const focus=q('[data-kg-focus]');focus.disabled=!state.node;focus.setAttribute('aria-pressed',String(state.focus));
+ const activeIds=new Set();if(edge){activeIds.add(edge.source);activeIds.add(edge.target);}else if(state.node){activeIds.add(state.node);visibleEdges.filter(e=>e.source===state.node||e.target===state.node).forEach(e=>{activeIds.add(e.source);activeIds.add(e.target);});}
+ nodeMarks.forEach(m=>{m.g.classList.toggle('kg-selected',m.n.id===state.node||!!edge&&activeIds.has(m.n.id));m.g.classList.toggle('kg-neighbor',!edge&&m.n.id!==state.node&&activeIds.has(m.n.id));m.g.classList.toggle('kg-dim',activeIds.size>0&&!activeIds.has(m.n.id));});
+ edgeMarks.forEach(m=>{m.line.classList.toggle('kg-edge-selected',m.e.id===state.edge);m.line.classList.toggle('kg-dim',!!state.edge&&m.e.id!==state.edge||!!state.node&&m.e.source!==state.node&&m.e.target!==state.node);});
+}
+function chooseNode(id){state.node=id||null;state.edge=null;if(!id)state.focus=false;if(state.mode==='history'||state.focus)render();else showDetail();remember();}
+function chooseEdge(id){state.edge=id||null;state.node=null;state.focus=false;showDetail();remember();}
+function fitComponent(ids,box){
+ const insideEdges=visibleEdges.filter(e=>ids.includes(e.source)&&ids.includes(e.target));
+ const half=nodeWidth/2+9,padY=34,cx=box.x+box.w/2,cy=box.y+box.h/2;
+ ids.forEach((id,i)=>{const angle=2*Math.PI*i/Math.max(ids.length,1)-Math.PI/2;positions.set(id,{x:cx+Math.cos(angle)*Math.max(0,(box.w-nodeWidth-24)*.40),y:cy+Math.sin(angle)*Math.max(0,(box.h-76)*.40)});});
+ for(let tick=0;tick<320;tick++){
+  const forces=new Map(ids.map(id=>[id,{x:0,y:0}]));
+  for(let i=0;i<ids.length;i++)for(let j=i+1;j<ids.length;j++){const a=positions.get(ids[i]),b=positions.get(ids[j]);let dx=a.x-b.x,dy=a.y-b.y;if(Math.abs(dx)+Math.abs(dy)<.1){dx=(i%2?1:-1)*.5;dy=.7;}const dist=Math.max(1,Math.hypot(dx,dy)),power=Math.min(8,2400/(dist*dist));const fa=forces.get(ids[i]),fb=forces.get(ids[j]);fa.x+=dx/dist*power;fa.y+=dy/dist*power;fb.x-=dx/dist*power;fb.y-=dy/dist*power;
+   const ox=nodeWidth+16-Math.abs(dx),oy=68-Math.abs(dy);if(ox>0&&oy>0){if(ox<oy){const push=Math.sign(dx)*ox*.28;fa.x+=push;fb.x-=push;}else{const push=Math.sign(dy)*oy*.28;fa.y+=push;fb.y-=push;}}}
+  insideEdges.forEach(e=>{const a=positions.get(e.source),b=positions.get(e.target),dx=b.x-a.x,dy=b.y-a.y,dist=Math.max(1,Math.hypot(dx,dy)),power=(dist-(nodeWidth+36))*.018;const fa=forces.get(e.source),fb=forces.get(e.target);fa.x+=dx/dist*power;fa.y+=dy/dist*power;fb.x-=dx/dist*power;fb.y-=dy/dist*power;});
+  ids.forEach(id=>{const p=positions.get(id),f=forces.get(id);p.x=Math.max(box.x+half,Math.min(box.x+box.w-half,p.x+(f.x+(cx-p.x)*.002)*.7));p.y=Math.max(box.y+padY,Math.min(box.y+box.h-padY,p.y+(f.y+(cy-p.y)*.002)*.7));});
+ }
+}
+function layout(){
+ positions=new Map();const groups=components(visibleNodes,visibleEdges);lastComponents=groups;
+ const narrow=width<500;nodeWidth=narrow?94:126;
+ const columns=Math.max(1,Math.floor(width/(nodeWidth+34)));const main=groups[0]||[];
+ let rest=groups.slice(1),mainHeight=0;
+ if(main.length){mainHeight=main.length>3?Math.max(360,Math.ceil(main.length/columns)*95):205;fitComponent(main,{x:8,y:8,w:width-16,h:mainHeight-16});}
+ const smallCols=Math.max(1,Math.floor(width/(narrow?260:245))),cellWidth=width/smallCols;let y=mainHeight;
+ for(let i=0;i<rest.length;i+=smallCols){const row=rest.slice(i,i+smallCols),rowHeight=Math.max(...row.map(g=>Math.max(185,Math.ceil(g.length/Math.max(1,Math.floor(cellWidth/(nodeWidth+26))))*82)));row.forEach((g,j)=>fitComponent(g,{x:j*cellWidth+6,y:y+6,w:cellWidth-12,h:rowHeight-12}));y+=rowHeight;}
+ height=Math.max(360,y+8);return groups;
+}
+function cameraTransform(){if(scene)scene.setAttribute('transform',`translate(${camera.x} ${camera.y}) scale(${camera.scale})`);}
+function updatePositions(){edgeMarks.forEach(({e,line,hit})=>{const a=positions.get(e.source),b=positions.get(e.target);const d=`M${a.x} ${a.y}L${b.x} ${b.y}`;line.setAttribute('d',d);hit.setAttribute('d',d);});nodeMarks.forEach(({n,g})=>{const p=positions.get(n.id);g.setAttribute('transform',`translate(${p.x} ${p.y})`);});}
+function draw(){
+ svg.replaceChildren();edgeMarks=[];nodeMarks=[];width=Math.max(260,svg.parentElement.clientWidth);layout();
+ svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.setAttribute('height',height);
+ mark(svg,'title',{},`${visibleNodes.length} nodes, ${visibleEdges.length} relations, ${lastComponents.length} components. Solid: metadata. Dashed: hypothesis.`);
+ scene=mark(svg,'g',{});camera={x:0,y:0,scale:1};
+ visibleEdges.forEach(e=>{const line=mark(scene,'path',{class:`kg-line kg-${e.properties.tier.toLowerCase()}`,'data-relation-id':e.id,'data-tier':e.properties.tier});const hit=mark(scene,'path',{class:'kg-hit'});mark(hit,'title',{},`${e.properties.tier} · ${e.properties.label}`);hit.addEventListener('click',()=>chooseEdge(e.id));edgeMarks.push({e,line,hit});});
+ visibleNodes.forEach(n=>{const g=mark(scene,'g',{class:'kg-node','data-node-id':n.id,'aria-label':label(n)});mark(g,'title',{},label(n));mark(g,'rect',{x:-nodeWidth/2,y:-24,width:nodeWidth,height:48,rx:n.type==='ResearchDomain'?3:9,class:'kg-node-shape'+(n.type==='ResearchDomain'?' kg-domain':'')});mark(g,'text',{'text-anchor':'middle',y:-3},clipped(short(n),width<500?11:16));mark(g,'text',{'text-anchor':'middle',y:15,class:'kg-node-code'},code(n));g.addEventListener('click',()=>{if(!g.dataset.dragged)chooseNode(n.id);delete g.dataset.dragged;});g.addEventListener('pointerdown',event=>startDrag(event,n,g));nodeMarks.push({n,g});});
+ updatePositions();cameraTransform();if(!visibleNodes.length)mark(svg,'text',{x:width/2,y:height/2,'text-anchor':'middle'},state.query?'No matching conversations':'No relations match these filters');
+}
+function svgPoint(event){const p=svg.createSVGPoint();p.x=event.clientX;p.y=event.clientY;return p.matrixTransform(svg.getScreenCTM().inverse());}
+function startDrag(event,n,g){event.stopPropagation();const start=svgPoint(event),old={...positions.get(n.id)};g.setPointerCapture(event.pointerId);const move=e=>{const p=svgPoint(e),dx=(p.x-start.x)/camera.scale,dy=(p.y-start.y)/camera.scale;if(Math.abs(dx)+Math.abs(dy)>4)g.dataset.dragged='true';positions.set(n.id,{x:Math.max(nodeWidth/2+8,Math.min(width-nodeWidth/2-8,old.x+dx)),y:Math.max(28,Math.min(height-28,old.y+dy))});updatePositions();};const end=()=>{g.removeEventListener('pointermove',move);g.removeEventListener('pointerup',end);g.removeEventListener('pointercancel',end);};g.addEventListener('pointermove',move);g.addEventListener('pointerup',end);g.addEventListener('pointercancel',end);}
+svg.addEventListener('pointerdown',event=>{if(event.target!==svg)return;const start=svgPoint(event),old={...camera};svg.setPointerCapture(event.pointerId);const move=e=>{const p=svgPoint(e);camera.x=old.x+p.x-start.x;camera.y=old.y+p.y-start.y;cameraTransform();};const end=()=>{svg.removeEventListener('pointermove',move);svg.removeEventListener('pointerup',end);svg.removeEventListener('pointercancel',end);};svg.addEventListener('pointermove',move);svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);});
+function drawHistory(){const area=q('[data-kg-history]');area.replaceChildren();const n=nodeMap.get(state.node);if(!n){el(area,'p','No conversation records match these filters.','kg-muted');return;}el(area,'h3',label(n));const box=el(area,'div',undefined,'kg-table-wrap');table(box,['Date','Source','Status','Original to observed title'],observations(n).map(o=>[o.event_date,names[o.source_type]||o.source_type,statuses[o.status]+' · '+o.status,`${o.original_title} → ${o.displayed_title||'Unconfirmed'}`]));}
+function render(){
+ q('[data-kg-mode]').value=state.mode;q('[data-kg-source]').value=state.source;if(q('[data-kg-search]').value!==state.query)q('[data-kg-search]').value=state.query;
+ root.querySelectorAll('[data-kg-layers] input[value]').forEach(i=>i.checked=state.tiers.includes(i.value));q('[data-kg-isolates]').checked=state.isolates;
+ const available=research.nodes.filter(n=>(state.mode==='domains'||n.type==='Conversation')&&(n.type==='ResearchDomain'||observations(n).length)),layer=state.mode==='domains'?'domain_coding':'cross_topic';
+ q('[data-kg-e1-caption]').textContent=state.mode==='domains'?'Domain coding':'Topic compatibility';
+ for(const t of ['E0','E1','H'])q(`[data-kg-tier-count="${t}"]`).textContent=research.edges.filter(e=>e.properties.layer===layer&&e.properties.active&&e.properties.tier===t&&[e.source,e.target].every(id=>nodeMap.get(id)?.type==='ResearchDomain'||e.properties.support.some(s=>s.conversation_url===nodeMap.get(id)?.properties.url&&sourceMatch(s)))).length;
+ visibleEdges=research.edges.filter(e=>e.properties.layer===layer&&edgeMatch(e));const connected=new Set(visibleEdges.flatMap(e=>[e.source,e.target]));
+ visibleNodes=available.filter(n=>state.mode==='history'?n.type==='Conversation':connected.has(n.id)||(state.isolates&&n.type==='Conversation'));
+ if(state.query.trim()){const term=state.query.trim().toLowerCase(),matched=new Set(available.filter(n=>[label(n),n.label,...(n.properties.latest_observed_titles||[])].join(' ').toLowerCase().includes(term)).map(n=>n.id));visibleEdges=visibleEdges.filter(e=>matched.has(e.source)||matched.has(e.target));const ids=new Set([...matched,...visibleEdges.flatMap(e=>[e.source,e.target])]);visibleNodes=available.filter(n=>ids.has(n.id)&&(state.mode!=='history'||n.type==='Conversation'));}
+ if(state.focus&&state.node&&state.mode!=='history'){visibleEdges=visibleEdges.filter(e=>e.source===state.node||e.target===state.node);const ids=new Set([state.node,...visibleEdges.flatMap(e=>[e.source,e.target])]);visibleNodes=visibleNodes.filter(n=>ids.has(n.id));}
+ visibleNodes.sort((a,b)=>code(a).localeCompare(code(b)));
+ if(state.node&&!visibleNodes.some(n=>n.id===state.node)){state.node=null;state.focus=false;}if(state.edge&&!visibleEdges.some(e=>e.id===state.edge))state.edge=null;
+ options(q('[data-kg-node]'),visibleNodes.map(n=>[n.id,label(n)]),state.node,'Select a node');options(q('[data-kg-edge]'),visibleEdges.map(e=>[e.id,`${e.properties.tier} · ${e.properties.label}`]),state.edge,'Select a relation');
+ const history=state.mode==='history';q('[data-kg-view-title]').textContent=history?'Title history':state.mode==='domains'?'Domain coding':'Cross-topic relations';
+ svg.toggleAttribute('hidden',history);q('[data-kg-camera]').hidden=history;q('[data-kg-edge-label]').hidden=history;q('[data-kg-layers]').hidden=history;q('[data-kg-history]').hidden=!history;q('[data-kg-export]').disabled=history||!visibleEdges.length;
+ if(history){if(!state.node)state.node=visibleNodes[0]?.id||null;drawHistory();}else draw();
+ const emptyCount=available.filter(n=>n.type==='Conversation'&&!connected.has(n.id)).length;
+ q('[data-kg-count]').textContent=history?`${visibleNodes.length} conversations. Historical titles do not establish current browser state.`:`${visibleNodes.length} visible nodes; ${visibleEdges.length} relations; ${lastComponents.length} components${state.query.trim()?' · Results include direct neighbors':` · ${emptyCount} conversations have no relations of this type`}${state.mode==='domains'?' · Analyst classification':''}`;
+ const stale=research.stale_relations;q('[data-kg-stale] summary').textContent=`Changed sources and quarantined relations · ${stale.length}`;const list=q('[data-kg-stale-list]');list.replaceChildren();if(!stale.length)el(list,'p','No relations have been quarantined for changed source fingerprints.','kg-muted kg-small');stale.forEach(e=>el(list,'p',`${e.properties.tier} · ${e.properties.label} · ${e.properties.stale_reasons.join(', ')}; Excluded from active relations.`));
+ showDetail();root.dataset.rendered='true';root.dataset.view='network-v3';
+}
+function overview(){
+ const counts=data.metadata.research_relation_counts||{},runs=data.report?.runs||[],dates=data.observations.map(o=>o.event_date).filter(Boolean).sort();
+ q('[data-kg-date]').textContent=dates.at(-1)||'Date unknown';if(data.observations.length&&data.observations.every(o=>o.source_type==='synthetic')){q('.kg-stamp span').textContent='SYNTHETIC DEMO: fictional chats, no live browser actions';}q('[data-kg-stat-conversations]').textContent=data.conversations.length;q('[data-kg-stat-observations]').textContent=data.observations.length;
+ q('[data-kg-stat-relations]').textContent=research.edges.filter(e=>e.properties.layer==='cross_topic').length;q('[data-kg-stat-hypotheses]').textContent=counts.H||0;
+ q('[data-kg-stat-supported]').textContent=`E0 ${counts.E0||0}; E1 ${counts.E1||0}`;q('[data-kg-stat-runs]').textContent=`${runs.length} recorded runs; source types preserved`;
+ root.querySelectorAll('[data-kg-tier-count]').forEach(e=>e.textContent=counts[e.dataset.kgTierCount]||0);
+ q('[data-kg-summary]').textContent=`${data.conversations.length} conversations; ${data.observations.length} observations; ${data.metadata.excluded_pending_targets} pending targets excluded from observations`;
+ if(!runs.length){q('[data-kg-runs]').hidden=true;return;}
+ const sorted=[...runs].sort((a,b)=>(b.triggered_at||b.event_date+'T00:00:00').localeCompare(a.triggered_at||a.event_date+'T00:00:00')||b.run_id.localeCompare(a.run_id));
+ const preferred=sorted.find(r=>r.source_type==='live_ui')||sorted[0];
+ options(q('[data-kg-run]'),sorted.map(r=>[r.run_id,`${r.event_date} · ${names[r.source_type]||r.source_type} · ${r.run_id}`]),preferred.run_id,null);
+ q('[data-kg-run-summary]').textContent=`· Selected latest run: ${preferred.terminal_count}/${preferred.requested_count}`;
+ function showRun(){const r=runs.find(x=>x.run_id===q('[data-kg-run]').value)||preferred;const area=q('[data-kg-run-metrics]');area.replaceChildren();for(const[text,value]of [['Requested',r.requested_count],['Frozen',r.frozen_count],['Terminal',r.terminal_count],['Renamed',r.status_counts.RENAMED||0],['Kept',r.status_counts['ALREADY CORRECT']||0],['Pending',r.pending_count]]){const item=el(area,'span');el(item,'strong',String(value));el(item,'span',' '+text);}q('[data-kg-run-source]').textContent=`${names[r.source_type]||r.source_type} · ${r.state} · Triggered ${localTime(r.triggered_at)}`;
+ table(q('[data-kg-run-table]'),['Position','Result','Original title','Observed title'],r.targets.map(t=>[t.position,`${statuses[t.status]||t.status} · ${t.status}`,t.original_title,t.displayed_title||'Unknown / Unconfirmed']));q('[data-kg-run-note]').textContent=`This run: ${r.terminal_count}/${r.requested_count} terminal outcomes; ${r.pending_count} pending. Unknown saves remain unknown; historical imports do not become live UI evidence.`;}
+ q('[data-kg-run]').addEventListener('change',showRun);showRun();
+}
+q('[data-kg-mode]').addEventListener('change',e=>{state.mode=e.target.value;state.node=null;state.edge=null;state.focus=false;render();remember();});
+q('[data-kg-source]').addEventListener('change',e=>{state.source=e.target.value;render();remember();});
+q('[data-kg-search]').addEventListener('input',e=>{state.query=e.target.value.slice(0,120);state.focus=false;render();remember();});
+q('[data-kg-layers]').addEventListener('change',()=>{state.tiers=[...root.querySelectorAll('[data-kg-layers] input[value]:checked')].map(i=>i.value);state.isolates=q('[data-kg-isolates]').checked;render();remember();});
+q('[data-kg-node]').addEventListener('change',e=>chooseNode(e.target.value));q('[data-kg-edge]').addEventListener('change',e=>chooseEdge(e.target.value));
+q('[data-kg-focus]').addEventListener('click',()=>{state.focus=!state.focus;render();remember();});
+function zoom(factor){const next=Math.max(.6,Math.min(3,camera.scale*factor));camera.x=width/2-(width/2-camera.x)*next/camera.scale;camera.y=height/2-(height/2-camera.y)*next/camera.scale;camera.scale=next;cameraTransform();}
+q('[data-kg-zoom-in]').addEventListener('click',()=>zoom(1.25));q('[data-kg-zoom-out]').addEventListener('click',()=>zoom(.8));q('[data-kg-fit]').addEventListener('click',()=>{camera={x:0,y:0,scale:1};cameraTransform();});
+q('[data-kg-export]').addEventListener('click',()=>{const cell=v=>{let s=v==null?'':typeof v==='object'?JSON.stringify(v):String(v);if(/^[\s]*[=+\-@]/.test(s))s="'"+s;return'"'+s.replaceAll('"','""')+'"';};const columns=['id','source_id','target_id','tier','label','source_url','target_url','evidence','validation_needed','validation_status','support','source_documents'];const rows=visibleEdges.map(e=>({id:e.id,source_id:e.source,target_id:e.target,...e.properties,source_url:nodeMap.get(e.source)?.properties.url||null,target_url:nodeMap.get(e.target)?.properties.url||null}));const csv='\ufeff'+[columns.map(cell).join(','),...rows.map(r=>columns.map(k=>cell(r[k])).join(','))].join('\r\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='research-relations-'+state.mode+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState){restore(event.detail.globals.widgetState);render();}});
+let lastWidth=0;new ResizeObserver(()=>{const w=svg.parentElement.clientWidth;if(Math.abs(w-lastWidth)>2){lastWidth=w;render();}}).observe(svg.parentElement);
+overview();render();
+})();
+</script>
+</section>

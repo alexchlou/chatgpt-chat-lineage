@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChatGPT Chat Lineage"
+  short_description: "Improve chat titles and build a sourced local knowledge graph"
+  default_prompt: "Use $chatgpt-conversation-rename to inspect the identified ChatGPT conversation in Chrome. Freeze exact URLs before any authorized batch."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,13 @@
+{
+  "name": "chatgpt-chat-lineage",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Codex skill for searchable chat titles and sourced local knowledge graphs",
+  "license": "MIT",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "test": "node --test tests/cua_workflow.test.cjs tests/recovery_integration.test.cjs",
+    "test:ui": "node tests/knowledge_graph_view.test.cjs build/demo/knowledge_graph/rename-knowledge-graph.html build/qa/ui.json"
+  },
+  "devDependencies": {"playwright": "1.62.1"}
+}

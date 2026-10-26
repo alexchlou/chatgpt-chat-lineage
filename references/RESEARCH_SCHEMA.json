@@ -1,0 +1,547 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChatGPT rename metadata bundle",
+  "description": "Structural schema; Python validator additionally enforces frozen scope, status evidence, provenance and idempotence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run",
+    "events"
+  ],
+  "properties": {
+    "run": {
+      "$ref": "#/$defs/run"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "final_state": {
+      "enum": [
+        "COMPLETE",
+        "PARTIAL",
+        "INTERRUPTED"
+      ]
+    },
+    "metrics": {
+      "$ref": "#/$defs/metrics"
+    }
+  },
+  "$defs": {
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "event_date",
+        "mode",
+        "source_type",
+        "source_ref",
+        "skill_version",
+        "scope_kind",
+        "selection_rule",
+        "requested_count",
+        "targets"
+      ],
+      "properties": {
+        "limitations": {
+          "type": "array",
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "mode": {
+          "enum": [
+            "apply",
+            "inspect"
+          ]
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/target"
+          }
+        },
+        "source_type": {
+          "enum": [
+            "historical_artifact",
+            "historical_transcript",
+            "live_ui",
+            "synthetic"
+          ]
+        },
+        "skill_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "requested_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "selection_rule": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "scope_kind": {
+          "enum": [
+            "recent_top_n",
+            "exact_urls",
+            "confirmed_single"
+          ]
+        },
+        "triggered_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "exclude_pinned": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,119}$"
+        },
+        "event_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "scheduled_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "operator_model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "source_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1500
+        },
+        "recovery_protocol": {
+          "const": "rename-recovery/1"
+        },
+        "browser_binding": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 250
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conversation_url",
+        "original_title"
+      ],
+      "properties": {
+        "conversation_url": {
+          "type": "string",
+          "pattern": "^https://chatgpt\\.com/(g/[^/]+/)?c/[A-Za-z0-9-]+/?$"
+        },
+        "original_title": {
+          "type": "string",
+          "maxLength": 250,
+          "pattern": "^[^\\r\\n\\u0000]*$",
+          "minLength": 1
+        },
+        "position": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conversation_url",
+        "rationale"
+      ],
+      "properties": {
+        "conversation_url": {
+          "type": "string",
+          "pattern": "^https://chatgpt\\.com/(g/[^/]+/)?c/[A-Za-z0-9-]+/?$"
+        },
+        "stage": {
+          "enum": [
+            "PLANNED",
+            "SAVE_PENDING",
+            "RESULT",
+            "CORRECTION"
+          ]
+        },
+        "status": {
+          "enum": [
+            "ALREADY CORRECT",
+            "BLOCKED",
+            "INSPECTED",
+            "RENAMED",
+            "VERIFICATION FAILED",
+            null
+          ]
+        },
+        "decision": {
+          "enum": [
+            "rename",
+            "keep",
+            "undetermined"
+          ]
+        },
+        "proposed_title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 250,
+          "pattern": "^[^\\r\\n\\u0000]*$"
+        },
+        "displayed_title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 250,
+          "pattern": "^[^\\r\\n\\u0000]*$"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600,
+          "pattern": "^[^\\r\\n\\u0000]*$"
+        },
+        "reason_codes": {
+          "type": "array",
+          "maxItems": 12,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "AMBIGUOUS_TOPIC",
+              "BODY_NOT_READY",
+              "CONTROL_UNCLEAR",
+              "EXISTING_TITLE_ADEQUATE",
+              "IDENTITY_AMBIGUOUS",
+              "LOGIN_REQUIRED",
+              "MISSING_OBJECT",
+              "MISSING_TASK",
+              "OTHER",
+              "OUTDATED_CLAIM",
+              "SAVE_UNCONFIRMED",
+              "TOPIC_EVOLVED"
+            ]
+          }
+        },
+        "topic_labels": {
+          "type": "array",
+          "maxItems": 8,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "maxLength": 60
+          }
+        },
+        "task_type": {
+          "enum": [
+            "device_instructions",
+            "document_workflow",
+            "monitoring",
+            "other",
+            "reading_review",
+            "research",
+            "submission_preparation",
+            "translation",
+            "undetermined"
+          ]
+        },
+        "annotation_basis": {
+          "enum": [
+            "visible_context",
+            "historical_record",
+            "title_only",
+            "not_assessed"
+          ]
+        },
+        "context_level": {
+          "enum": [
+            "outline",
+            "expanded",
+            "partial",
+            "not_ready",
+            "unknown"
+          ]
+        },
+        "observed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "save_attempted": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "verification": {
+          "$ref": "#/$defs/verification"
+        },
+        "metrics": {
+          "$ref": "#/$defs/metrics"
+        },
+        "supersedes_event_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "observation": {
+          "$ref": "#/$defs/observation"
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "additional_clicks": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "additional_observations": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "body_expansions": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "clicks": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "context_chars_emitted": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "input_writes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "observations": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "save_attempts": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "snapshot_chars_read": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "wall_elapsed_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "coverage": {
+          "enum": [
+            "complete_run",
+            "helper_only",
+            "partial",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "address_url_matches": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "document_url_matches": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "editor_closed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "sidebar_title_matches": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "identity_source": {
+          "enum": [
+            "native-ax",
+            "supported-tab-metadata",
+            "reported-ui",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "run_id",
+        "target_url",
+        "session_epoch",
+        "binding_key",
+        "snapshot_id",
+        "observed_at",
+        "fresh",
+        "address_url",
+        "document_url",
+        "document_title",
+        "sidebar_title",
+        "editor_closed",
+        "identity_source"
+      ],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 250
+        },
+        "session_epoch": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 250
+        },
+        "binding_key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 250
+        },
+        "snapshot_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 250
+        },
+        "protocol": {
+          "const": "rename-recovery/1"
+        },
+        "target_url": {
+          "type": "string"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "fresh": {
+          "const": true
+        },
+        "address_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "document_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "document_title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 250
+        },
+        "sidebar_title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 250
+        },
+        "editor_closed": {
+          "type": "boolean"
+        },
+        "identity_source": {
+          "enum": [
+            "native-ax",
+            "supported-tab-metadata",
+            "unknown"
+          ]
+        }
+      }
+    }
+  }
+}

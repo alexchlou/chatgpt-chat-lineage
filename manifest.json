@@ -1,0 +1,130 @@
+{
+  "version": "0.1.0",
+  "engine": "Codex",
+  "role": "execution-leaf",
+  "default_mode": "inspect",
+  "default_scope": "one identified conversation",
+  "batch_scope": "explicit user request; frozen ordered URLs; recent excludes pinned unless specified",
+  "helper": "scripts/cua_workflow.js",
+  "helper_surface": "Chrome native accessibility through documented cua_repl API",
+  "ellipsis_identity_fallback": "documented tab metadata only with address, HTML title and selected-tab title agreement",
+  "max_observations_per_check": 3,
+  "max_verification_rounds": 2,
+  "default_persistence": "disabled; explicit opt-in with private local config",
+  "public_statuses": [
+    "RENAMED",
+    "ALREADY CORRECT",
+    "BLOCKED",
+    "VERIFICATION FAILED"
+  ],
+  "implicit_invocation": "unchanged: enabled",
+  "behavior_model_runs": {
+    "model_routing": "NOT_RUN"
+  },
+  "cross_engine_port": "not performed; Codex CUA dependency",
+  "research_journal": {
+    "config": "research_config.json",
+    "schema": "references/RESEARCH_SCHEMA.json",
+    "script": "scripts/research_journal.py",
+    "schema_version": "1.0.0",
+    "engine": "Python standard library + SQLite",
+    "canonical_store": "research.sqlite3",
+    "snapshots": "per-run JSON",
+    "exports": [
+      "CSV",
+      "JSONL"
+    ],
+    "bodies_saved": false,
+    "knowledge_graph": {
+      "builder": "scripts/knowledge_graph.py",
+      "view_template": "assets/knowledge-graph-view.html",
+      "enabled_by": "dataset knowledge_graph/config.json",
+      "refresh": "on journal export, using the same consistent database snapshot",
+      "formats": [
+        "JSON property graph",
+        "GraphML",
+        "nodes CSV",
+        "edges CSV",
+        "interactive view"
+      ],
+      "schema_version": "2.0.0",
+      "relationship_registry": "dataset knowledge_graph/relationship_registry.json",
+      "register_assertion": "scripts/register_research_relation.py",
+      "evidence_tiers": {
+        "E0": "exact stored tag overlap",
+        "E1": "metadata compatibility only",
+        "H": "pending validation"
+      },
+      "incremental_outputs": [
+        "research_relationships.csv",
+        "research_relationships.json",
+        "updates.jsonl",
+        "revisions/<update_id>.json"
+      ],
+      "stale_policy": "source signature change quarantines relations; never auto-promote H",
+      "visual_report": {
+        "version": "3.0.0",
+        "standalone": true,
+        "offline": true,
+        "features": [
+          "readable title labels",
+          "evidence inspector",
+          "source filters",
+          "search",
+          "one-hop focus",
+          "disconnected components",
+          "run denominators",
+          "CSV with provenance",
+          "dark and responsive layouts"
+        ],
+        "incremental": "refreshed by existing journal export"
+      },
+      "obsidian": {
+        "enabled_by": "dataset knowledge_graph/config.json obsidian",
+        "exporter": "scripts/obsidian_export.py",
+        "reference": "references/OBSIDIAN.md",
+        "refresh": "after committed CSV/graph export",
+        "manual_area": "preserved after KG-MANUAL marker",
+        "conflict_policy": "stop before note writes; retry export only",
+        "evidence": "copy sourced tiers; never promote H",
+        "mail_policy": "no new send or attachment rewrite"
+      }
+    }
+  },
+  "recovery": {
+    "protocol": "rename-recovery/1",
+    "reference": "references/RECOVERY.md",
+    "durable_mode_required_when_journaling": true,
+    "save_authorization": "one committed SQLite intent per run and URL; first acknowledgement only",
+    "reset_policy": "rediscover stable Chrome identity; restore frozen journal; uncertain saves verify only",
+    "evidence": "atomic observation envelope; cached results cannot claim freshness",
+    "legacy_payload_hashes": "unchanged; no fabricated receipts",
+    "regression": "synthetic UI and temporary databases; live fault injection not run",
+    "load_recovery": "same frozen run; explicit reopen after body ready; toCorrection appends and preserves BLOCKED",
+    "actual_title": "no-op result reads the same fresh sidebar row as its observation",
+    "replay": "cached targets are skipped; exact correction and graph export retries are idempotent",
+    "mail_after_correction": "same delivery key; preserve existing sent snapshot; never automatically resend"
+  },
+  "email_archive": {
+    "enabled_by": "research_config.json email_archive",
+    "reference": "references/EMAIL_ARCHIVE.md",
+    "script": "scripts/email_archive.py",
+    "pdf_renderer": "scripts/render_archive_pdf.cjs",
+    "mail_provider": "Gmail connector structured MIME only",
+    "deduplication": "one run_id and recipient; durable claim; payload issued once",
+    "readback": "full headers plus raw MIME body and attachment byte hashes",
+    "scope": "self-addressed report only; no chat bodies or credentials",
+    "body_version": "2.0.0",
+    "body_renderer": "scripts/mail_report.py",
+    "body_sections": [
+      "all run naming results",
+      "configured-timezone deduplicated relation additions and tiers",
+      "fingerprinted existing paper hypotheses",
+      "anomalies and limitations",
+      "full attachments"
+    ],
+    "sample_policy": "explicit user request only; separate stable sample ledger and key; never daily retry bypass"
+  },
+  "project": "ChatGPT Chat Lineage",
+  "default_title_language": "English; preserve adequate titles; user override supported"
+}
